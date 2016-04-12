@@ -177,6 +177,7 @@ class ProfileManager(object):
         fingerprint = profile.get('fingerprint')
         if fingerprint is not None:
             args.append('--servercert=%s' % fingerprint)
+        args.append('--script=/etc/vpnc/vpnc-script')
         args.append(profile['url'])
 
         c = Popen(args, **kwargs)
